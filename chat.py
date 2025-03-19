@@ -79,7 +79,7 @@ while True:
     top_prob, top_idx = torch.max(prob, dim=1)
     predicted_tag = model_data['tags'][top_idx.item()]
 
-    if top_prob.item() > 0.48:
+    if top_prob.item() > 0.6:
         response_given = False
         for intent in intents['intents']:
             if intent['tag'] == predicted_tag:
